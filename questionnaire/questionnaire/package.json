@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-web-app1",
+  "name": "questionnaire",
   "version": "0.0.0",
-  "description": "NodejsWebApp1",
+  "description": "questionnaire",
   "main": "server.js",
   "author": {
     "name": ""
