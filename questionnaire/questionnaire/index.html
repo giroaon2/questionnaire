@@ -24,7 +24,6 @@
         }
         function NotAllowCountries() {
             document.getElementById("CountryNotAllow").style = "display:block";
-            document.getElementById("section1").style = "display:block";
         }
         function BackSection2() {
             document.getElementById("section1").style = "display:block";
@@ -48,79 +47,81 @@
             <div id="CountryNotAllow" class="alert alert-danger" role="alert" style="display:none;">
                 The questionnaire is done
             </div>
-            <div id="section1" class="bd-example">
-                <h4>
-                    Personal Information
-                </h4>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Title:</label>
-                    <input type="text" class="form-control" id="Title" placeholder="(Mr. Ms. or Mrs.)">
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+            <form action="submit" method="post" enctype="multipart/form-data">
+                <div id="section1" class="bd-example">
+                    <h4>
+                        Personal Information
+                    </h4>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Title:</label>
+                        <input type="text" class="form-control" id="Title" placeholder="(Mr. Ms. or Mrs.)">
                     </div>
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" name="FirstName" placeholder="First name" aria-label="First name">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="LastName" placeholder="Last name" aria-label="Last name">
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">
-                        Date of birth:
-                    </label>
-                    <input type="date" class="form-control" id="BirthDate" placeholder="Last name" aria-label="Last name">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">
-                        Country of residence:
-                    </label>
-                    <select id="CountryList" class="form-select" multiple aria-label="multiple select example">
-                        <option selected value="Thailand">Thailand</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <button type="button" class="btn btn-success" onclick="NextSection1()">Next</button>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">
+                            Date of birth:
+                        </label>
+                        <input type="date" class="form-control" id="BirthDate" placeholder="Last name" aria-label="Last name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">
+                            Country of residence:
+                        </label>
+                        <select id="CountryList" class="form-select" multiple aria-label="multiple select example">
+                            <option selected value="Thailand">Thailand</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-success" onclick="NextSection1()">Next</button>
 
-            </div>
-            <div id="section2" class="bd-example" style="display:none;">
-                <h4>
-                    Address
-                </h4>
-                <div class="mb-3">
-                    <textarea class="form-control" id="AddressHouse" rows="3" placeholder="House" aria-label="House"></textarea>
                 </div>
-                <div class="mb-3">
-                    <textarea class="form-control" id="AddressWork" rows="3" placeholder="Work" aria-label="Work"></textarea>
+                <div id="section2" class="bd-example" style="display:none;">
+                    <h4>
+                        Address
+                    </h4>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="AddressHouse" rows="3" placeholder="House" aria-label="House"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="AddressWork" rows="3" placeholder="Work" aria-label="Work"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-light" onclick="BackSection2()">Back</button>
+                    <button type="button" class="btn btn-success" onclick="NextSection2()">Next</button>
                 </div>
-                <button type="button" class="btn btn-light" onclick="BackSection2()">Back</button>
-                <button type="button" class="btn btn-success" onclick="NextSection2()">Next</button>
-            </div>
-            <div id="section3" class="bd-example" style="display:none;">
-                <h4>
-                    Occupation
-                </h4>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Occupation:</label>
-                    <select id="Occupation" class="form-select" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+                <div id="section3" class="bd-example" style="display:none;">
+                    <h4>
+                        Occupation
+                    </h4>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Occupation:</label>
+                        <select id="Occupation" class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Job Title:</label>
+                        <input type="text" class="form-control" id="JobTitle" placeholder="(Developer, Project Manager, Senior QA)">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Business Type:</label>
+                        <input type="text" class="form-control" id="BusinessType" placeholder="(Logistic, IT, Insurance)">
+                    </div>
+                    <button type="button" class="btn btn-light" onclick="BackSection3()">Back</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Job Title:</label>
-                    <input type="text" class="form-control" id="JobTitle" placeholder="(Developer, Project Manager, Senior QA)">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Business Type:</label>
-                    <input type="text" class="form-control" id="BusinessType" placeholder="(Logistic, IT, Insurance)">
-                </div>
-                <button type="button" class="btn btn-light" onclick="BackSection3()">Back</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+            </form>
         </div>
     </div>
 </body>
